@@ -82,7 +82,7 @@ class Outputter(object):
                 initSpatialMetadata = True
 
             # Make connection
-            self.conn = sqlite3.connect(database, detect_types=sqlite3.PARSE_DECLTYPES)
+            self.conn = sqlite3.connect(database, check_same_thread=False, detect_types=sqlite3.PARSE_DECLTYPES)
             self.conn.row_factory = sqlite3.Row
 
             # Load spatial extension (SpatiaLite)
